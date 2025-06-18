@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 
-# Restrict the visibility of Android.bp files to improve build analysis time
-$(call inherit-product-if-exists, vendor/google/products/sources_pixel.mk)
-
 ifdef RELEASE_GOOGLE_CHEETAH_RADIO_DIR
 RELEASE_GOOGLE_PRODUCT_RADIO_DIR := $(RELEASE_GOOGLE_CHEETAH_RADIO_DIR)
 endif
@@ -32,13 +29,6 @@ endif
 TARGET_KERNEL_DIR := device/google/pantah-kernels/6.1/25Q1-13202328
 TARGET_BOARD_KERNEL_HEADERS := device/google/pantah-kernels/6.1/25Q1-13202328/kernel-headers
 TARGET_PREBUILT_KERNEL := device/google/pantah-kernels/6.1/25Q1-13202328/Image.lz4
-
-$(call inherit-product-if-exists, vendor/google_devices/pantah/prebuilts/device-vendor-cheetah.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/cheetah/device-vendor-cheetah.mk)
-$(call inherit-product-if-exists, vendor/google_devices/cheetah/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/pantah/proprietary/WallpapersCheetah.mk)
 
 $(call inherit-product, device/google/pantah/configs/uwb/uwb_calibration_country.mk)
 
@@ -278,23 +268,11 @@ PRODUCT_SOONG_NAMESPACES += \
     device/google/pantah/powerstats/configs/cheetah \
     device/google/pantah
 
-# Fingerprint HAL
-GOODIX_CONFIG_BUILD_VERSION := g7_trusty
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_common.mk)
-ifeq ($(filter factory%, $(TARGET_PRODUCT)),)
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_shipping.mk)
-else
-$(call inherit-product-if-exists, vendor/goodix/udfps/configuration/udfps_factory.mk)
-endif
-
 PRODUCT_PACKAGES += \
     UwbOverlayC10 \
     WifiOverlay2022_C10
 
 PRODUCT_SOONG_NAMESPACES += device/google/pantah/cheetah/
-
-# Trusty liboemcrypto.so
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/pantah/prebuilts
 
 # Location
 ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
