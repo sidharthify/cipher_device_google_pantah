@@ -321,8 +321,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SettingsOverlayGFE4J \
     SettingsOverlayGE2AE \
-    SettingsOverlayGP4BC \
-    SettingsOverlayCheetah
+    SettingsOverlayGP4BC
 
 # Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \

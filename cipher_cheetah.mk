@@ -6,7 +6,7 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
-$(call inherit-product, vendor/yaap/config/common_full_phone.mk)
+$(call inherit-product, vendor/cipher/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
@@ -15,21 +15,19 @@ VENDOR_PATH := vendor/google/cheetah
 
 # Inherit a few makefiles
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
-$(call inherit-product, device/google/gs201/yaap_common.mk)
-$(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-yaap.mk)
+$(call inherit-product, device/google/gs201/cipher_common.mk)
+$(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-cipher.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 7 Pro
-PRODUCT_NAME := yaap_$(DEVICE_CODENAME)
+PRODUCT_NAME := cipher_$(DEVICE_CODENAME)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 3120
 TARGET_SCREEN_WIDTH := 1440
 
-# YAAP Flags
-TARGET_SUPPORTS_64_BIT_APPS := true
-TARGET_ENABLE_BLUR := true
+TARGET_BOOT_ANIMATION_RES := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="cheetah-user 16 BP2A.250605.031.A2 13578606 release-keys" \

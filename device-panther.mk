@@ -306,8 +306,7 @@ PRODUCT_PACKAGES += \
     SettingsOverlayG03Z5 \
     SettingsOverlayGQML3 \
     SettingsOverlayGVU6C \
-    SettingsOverlayGVU6C_VN \
-    SettingsOverlayPanther
+    SettingsOverlayGVU6C_VN
 
 # Fingerprint HAL
 PRODUCT_VENDOR_PROPERTIES += \

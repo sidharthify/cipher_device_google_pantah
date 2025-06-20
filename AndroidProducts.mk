@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/yaap_cheetah.mk \
-    $(LOCAL_DIR)/yaap_panther.mk
+    $(LOCAL_DIR)/cipher_cheetah.mk \
+    $(LOCAL_DIR)/cipher_panther.mk
 
 COMMON_LUNCH_CHOICES := \
-    yaap_panther-user \
-    yaap_cheetah-user
+    cipher_panther-user \
+    cipher_cheetah-user
