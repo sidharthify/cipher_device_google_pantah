@@ -6,7 +6,13 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 $(call inherit-product, vendor/cipher/config/common_full_phone.mk)
+
+CIPHER_OFFICIAL := true
+CIPHER_MAINTAINER := sidharth
+TARGET_BOOT_ANIMATION_RES := 1440
+CIPHER_GAPPS := true
 
 # Inherit device configuration
 DEVICE_CODENAME := cheetah
