@@ -22,7 +22,7 @@ PRODUCT_PACKAGES += \
     Iwlan
 
 # PowerShare
-include hardware/google/pixel/powershare/device.mk
+#include hardware/google/pixel/powershare/device.mk
 
 # wireless_charger HAL service
 include device/google/gs-common/wireless_charger/wireless_charger.mk
@@ -53,3 +53,4 @@ PRODUCT_USE_SCUDO := true
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
+
